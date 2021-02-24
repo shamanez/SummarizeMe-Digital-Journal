@@ -6,3 +6,6 @@
     - Reddit data scraping scripts and cleaning scripts.
     - Pre-trained BART checkpoints with our proposed Mix Data fine-tune method.
     - All pre-processed data.
+
+
+![alt text](https://github.com/shamanez/SummarizeMe-Digital-Journal/blob/main/final_ui.pdf)
