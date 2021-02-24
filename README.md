@@ -8,4 +8,4 @@
     - All pre-processed data.
 
 
-![alt text](https://github.com/shamanez/SummarizeMe-Digital-Journal/blob/main/final_ui.pdf)
+![alt text](https://github.com/shamanez/SummarizeMe-Digital-Journal/blob/main/ui.png)
