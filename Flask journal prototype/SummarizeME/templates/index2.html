@@ -1,0 +1,111 @@
+{% extends "theme.html" %}
+{% block style %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+          integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+          crossorigin="anonymous"></script>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+  <script type="text/javascript" src="../static/js/recorder.js"></script>
+  <script type="text/javascript" src="../static/js/aduck.js"></script>
+  <script type="text/javascript" src="../static/js/speech.js"></script>
+
+{% endblock style %}
+
+{% block content %}
+  <div id="app" class="container" style="padding-top:0px;">
+    <h1>SummarizeMe Diary</h1>
+    <p class="page-description">Please tell about your day!</p>
+
+    <div class="app">
+      <div class="row">
+        <h3>Recorder</h3>
+      </div>
+      <div class="row">
+        <textarea class="recognized-text" id="recognised-textarea"
+                  placeholder="Create new notes by voice or keyboard input..." rows="6"></textarea>
+      </div>
+
+      <div class="row justify-content-center padding-medium">
+        <p class="center-responsive">
+          <a class=" btn btn-lg btn-info text-white" id="btn-recoder" onclick="startRecognising()"
+             role="button">Start
+            Recording</a>
+          <a class="btn btn-lg btn-dark text-white" href="./" role="button">Clear</a>
+          {#<a class="sentiment btn btn-lg btn-warning text-white" @click="submit" role="button">Sentiment
+            Now</a>#}
+        </p>
+      </div>
+
+
+      <h3> Parameters of The Generative AI </h3>
+      {# <div class="form-group col-md-3">
+              <label for="input_model">Model Selection</label>
+              <select id="input_model" class="form-control">
+                  <option selected>Dev-BART</option>
+                  <option>News-BART</option>
+              </select>
+          </div>#}
+      <div class="row justify-content-center">
+        <div class="form-group">
+          <label for="max_words" id="label_max_words"># words in summary: 50</label>
+          <input type="range" class="custom-range" min="10" max="50" value="50" step="10"
+                 id="max_words">
+        </div>
+      </div>
+
+
+      {#<div class="form-group col-md-3">
+              <label for="num_beams" id="label_num_beams"># beam search: 4</label>
+              <input type="range" class="custom-range" min="1" max="20" value="4" step="1" id="num_beams">
+          </div>#}
+
+      <p class="center-responsive">
+        <a id="btn-summary" class="summary btn btn-lg btn-warning text-black" @click="submit"
+           role="button">
+
+          Generate Summaries
+        </a>
+      </p>
+
+      <h3>Summary of Your Day
+        <span id="spanner" class="spinner-grow text-primary" role="status"
+              aria-hidden="true"></span>
+      </h3>
+      <div class="row justify-content-center">
+        <div class="col-6">
+        <textarea class="summarized-text" id="note-affective-summary"
+                  placeholder="Will give you an affective summary of your day..."
+                  rows="2" readonly></textarea>
+        </div>
+        <div class="col-6">
+        <textarea class="summarized-text" id="note-news-summary"
+                  placeholder="Will give you a normal summary of your day..." rows="2"
+                  readonly></textarea>
+        </div>
+
+      </div>
+
+
+      <p>
+        <img id="duck-img">
+      </p>
+      <div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block scripts %}
+
+{% endblock scripts %}
