@@ -8,5 +8,5 @@
 
 ## Aditionally we open-soruced reddit data scraping and preprocessing scripts.
 
-[Mixed CNN/DM and Reddit Tittle](https://drive.google.com/drive/u/5/folders/11XLVK3fElHmk157RZh_LV5dn211tarkx)
+[Mixed CNN/DM and Reddit Tittle](https://drive.google.com/drive/u/5/folders/13UcRsoU9iNYzAGCFerSuda4VoIbOtozz)
     
